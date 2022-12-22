@@ -12,6 +12,7 @@ func main() {
 	var path = "/"
 	// Setup Main Server
 	echoMainServer := echo.New()
+	//This hides echo banner when commented
 	echoMainServer.HideBanner = true
 	echoMainServer.Use(middleware.Logger())
 	echoMainServer.GET(path, hello)

@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	var path = "/"
 	// Setup Main Server
 	echoMainServer := echo.New()

@@ -9,17 +9,14 @@ import (
 )
 
 func main() {
-<<<<<<< HEAD
-	
-=======
+
 	var path = "/"
 	// Setup Main Server
 	echoMainServer := echo.New()
-	//echoMainServer.HideBanner = true
+	echoMainServer.HideBanner = true
 	echoMainServer.Use(middleware.Logger())
 	echoMainServer.GET(path, hello)
 
->>>>>>> squash
 	// Create Prometheus server and Middleware
 	echoPrometheus := echo.New()
 	echoPrometheus.HideBanner = true

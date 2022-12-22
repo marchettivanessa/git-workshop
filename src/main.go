@@ -10,7 +10,19 @@ import (
 
 func main() {
 
+var path = "/"
+	// Setup Main Server
+	echoMainServer := echo.New()
+	echoMainServer.HideBanner = true
+	echoMainServer.Use(middleware.Logger())
+	echoMainServer.GET(path, hello)
+	echoMainServer.Get(path, again)
 
+
+	// Create Prometheus server and Middleware
+	echoPrometheus := echo.New()
+	echoPrometheus.HideBanner = true
+	prom := prometheus.NewPrometheus("echo", nil)
 	
 	
 	echoPrometheus.HideBanner = true
@@ -29,4 +41,8 @@ func main() {
 
 func hello(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello, World!")
+}
+
+func again(c echo.Context) error {
+	return c.String(http.StatusOK, "Hello, Again!")
 }

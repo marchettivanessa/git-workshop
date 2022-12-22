@@ -11,6 +11,7 @@ func main() {
 	// Setup Main Server
 	echoMainServer := echo.New()
 	echoMainServer.GET(path, hello)
+	//New random comment
 }
 
 func hello(c echo.Context) error {

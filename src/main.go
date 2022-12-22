@@ -13,7 +13,7 @@ func main() {
 	var path = "/"
 	// Setup Main Server
 	echoMainServer := echo.New()
-	echoMainServer.HideBanner = true
+	//echoMainServer.HideBanner = true
 	echoMainServer.Use(middleware.Logger())
 	echoMainServer.GET(path, hello)
 
@@ -33,6 +33,6 @@ func main() {
 	echoMainServer.Logger.Fatal(echoMainServer.Start(":7090"))
 }
 
-func hello(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, World!")
-}
+// func hello(c echo.Context) error {
+// 	return c.String(http.StatusOK, "Hello, World!")
+// }

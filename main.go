@@ -17,7 +17,7 @@ func main() {
 	echoMainServer.Use(middleware.Logger())
 	echoMainServer.GET(path, hello)
 
-	// Create Prometheus server and Middleware
+	// Create Prometheus server and a Middleware
 	echoPrometheus := echo.New()
 	echoPrometheus.HideBanner = true
 	prom := prometheus.NewPrometheus("echo", nil)

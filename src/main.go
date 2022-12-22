@@ -26,6 +26,7 @@ func main() {
 	// Setup metrics endpoint at another server
 	prom.SetMetricsPath(echoPrometheus)
 
+	//Random comment here
 	go func() { echoPrometheus.Logger.Fatal(echoPrometheus.Start(":9360")) }()
 
 	echoMainServer.Logger.Fatal(echoMainServer.Start(":7090"))

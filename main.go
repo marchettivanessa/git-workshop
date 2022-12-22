@@ -12,11 +12,12 @@ func main() {
 	var path = "/"
 	// Setup Main Server
 	echoMainServer := echo.New()
+	//Comenting
 	echoMainServer.HideBanner = true
 	echoMainServer.Use(middleware.Logger())
 	echoMainServer.GET(path, hello)
 
-	// Create Prometheus server and Middleware
+	// Create Prometheus server and a Middleware
 	echoPrometheus := echo.New()
 	echoPrometheus.HideBanner = true
 	prom := prometheus.NewPrometheus("echo", nil)
@@ -26,6 +27,7 @@ func main() {
 	// Setup metrics endpoint at another server
 	prom.SetMetricsPath(echoPrometheus)
 
+	//ANother different comment
 	go func() { echoPrometheus.Logger.Fatal(echoPrometheus.Start(":9360")) }()
 
 	echoMainServer.Logger.Fatal(echoMainServer.Start(":7090"))

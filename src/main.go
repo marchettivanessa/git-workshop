@@ -11,8 +11,8 @@ import (
 func main() {
 
 
-	// Create Prometheus server and Middleware
-	echoPrometheus := echo.New()
+	
+	
 	echoPrometheus.HideBanner = true
 	prom := prometheus.NewPrometheus("echo", nil)
 
